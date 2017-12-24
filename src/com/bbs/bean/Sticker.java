@@ -3,10 +3,15 @@ package com.bbs.bean;
 import java.sql.Timestamp;
 
 public class Sticker {
+    //id
     private int id;
+    //标题
     private String title;
+    //内容
     private String content;
+    //创建时间
     private Timestamp create;
+    //作者
     private int userid;
 
     public int getUserid() {
