@@ -1,18 +1,18 @@
-package com.bbs.dao;
+package com.bbs.bean;
 
 public class User {
     //id
-    private String id;
+    private int id;
     //昵称
     private String username;
     //密码
     private String password;
     
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 

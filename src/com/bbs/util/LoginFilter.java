@@ -1,6 +1,6 @@
 package com.bbs.util;
 
-import com.bbs.dao.User;
+import com.bbs.bean.User;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;

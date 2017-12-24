@@ -1,4 +1,4 @@
-package com.bbs.dao;
+package com.bbs.bean;
 
 import java.sql.Timestamp;
 
@@ -7,6 +7,15 @@ public class Sticker {
     private String title;
     private String content;
     private Timestamp create;
+    private int userid;
+
+    public int getUserid() {
+        return userid;
+    }
+
+    public void setUserid(int userid) {
+        this.userid = userid;
+    }
 
     public int getId() {
         return id;
