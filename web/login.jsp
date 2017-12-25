@@ -31,16 +31,16 @@
             <div class="header" align="center">
                 <h1>论坛管理系统</h1>
             </div>
-        <form class="pure-form pure-form-aligned">
+        <form class="pure-form pure-form-aligned" action="${pageContext.request.contextPath}/login" method="post">
             <fieldset>
                 <div class="pure-control-group" align="center">
                     <label for="username">用户名</label>
-                    <input id="username" type="text" placeholder="Username">
+                    <input id="username" type="text" name="username" minlength="4" maxlength="15" placeholder="Username">
                 </div>
 
                 <div class="pure-control-group" align="center">
                     <label for="password">密码</label>
-                    <input id="password" type="password" placeholder="Password">
+                    <input id="password" type="password" name="password" minlength="6" maxlength="30" placeholder="Password">
                 </div>
                 <br>
 

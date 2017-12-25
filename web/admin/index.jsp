@@ -48,7 +48,7 @@
                     <a href="#" class="pure-menu-link">所有帖子</a>
                 </li>
                 <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">退出</a>
+                    <a href="${pageContext.request.contextPath}/exit" class="pure-menu-link">退出</a>
                 </li>
             </ul>
         </div>

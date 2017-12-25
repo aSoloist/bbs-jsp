@@ -20,8 +20,10 @@ public class LoginServlet extends HttpServlet {
         
         if (user == null) {
             response.getWriter().write("用户不存在");
+            response.setHeader("refresh", "3;url=login.jsp");
         } else if (!user.getPassword().equals(password)) {
             response.getWriter().write("密码错误");
+            response.setHeader("refresh", "3;url=login.jsp");
         } else {
             request.getSession().setAttribute("user", user);
             response.sendRedirect("/admin/show");
