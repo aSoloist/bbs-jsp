@@ -57,4 +57,14 @@
         <servlet-name>showServlet</servlet-name>
         <url-pattern>/admin/show</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>showStickerServlet</servlet-name>
+        <servlet-class>com.bbs.servlet.ShowStickerServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>showStickerServlet</servlet-name>
+        <url-pattern>/admin/showSticker</url-pattern>
+    </servlet-mapping>
 </web-app>
