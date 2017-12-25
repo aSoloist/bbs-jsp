@@ -31,7 +31,7 @@
             <div class="header" align="center">
                 <h1>论坛管理系统</h1>
             </div>
-        <form class="pure-form pure-form-aligned">
+        <form class="pure-form pure-form-aligned" action="login">
             <fieldset>
                 <div class="pure-control-group" align="center">
                     <label for="username">用户名</label>
