@@ -51,6 +51,9 @@ public class UserDao {
             ResultSet resultSet = pstat.executeQuery();
             if (resultSet.next()) {
                 user = new User();
+                user.setId(resultSet.getInt("id"));
+                user.setUsername(resultSet.getString("username"));
+                user.setPassword(resultSet.getString("password"));
             }
         } catch (SQLException e) {
             e.printStackTrace();

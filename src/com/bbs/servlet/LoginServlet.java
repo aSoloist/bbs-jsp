@@ -9,21 +9,22 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class LoginServlet extends HttpServlet {
+    private UserDao userDao = new UserDao();
 
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        String username = req.getParameter("username").trim();
-        String password = req.getParameter("password").trim();
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String username = request.getParameter("username").trim();
+        String password = request.getParameter("password").trim();
         
         User user;
-        user = UserDao.getByUsername(username);
+        user = userDao.getByUsername(username);
         
         if (user == null) {
-            throw new RuntimeException("用户不存在");
+            response.getWriter().write("用户不存在");
         } else if (!user.getPassword().equals(password)) {
-            throw new RuntimeException("密码错误");
+            response.getWriter().write("密码错误");
         } else {
-            req.getSession().setAttribute("user", user);
-            resp.sendRedirect("/admin/getIndex");
+            request.getSession().setAttribute("user", user);
+            response.sendRedirect("/admin/show");
         }
     }
 }
