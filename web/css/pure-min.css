@@ -124,7 +124,7 @@ button, input, optgroup, select, textarea {
     margin: 0
 }
 
-.pure-button, input {
+.pure-button input {
     line-height: normal
 }
 
@@ -826,7 +826,7 @@ legend {
 
 .pure-table {
     empty-cells: show;
-    border: 1px solid #cbcbcb
+    border: 1px solid #000
 }
 
 .pure-table caption {
@@ -838,7 +838,6 @@ legend {
 
 .pure-table td, .pure-table th {
     border-left: 1px solid #cbcbcb;
-    border-width: 0 0 0 1px;
     font-size: inherit;
     margin: 0;
     overflow: visible;
@@ -850,7 +849,7 @@ legend {
 }
 
 .pure-table thead {
-    background-color: #e0e0e0;
+    background-color: #ff9cad;
     color: #000;
     text-align: left;
     vertical-align: bottom
@@ -861,7 +860,7 @@ legend {
 }
 
 .pure-table-odd td, .pure-table-striped tr:nth-child(2n-1) td {
-    background-color: #f2f2f2
+    background-color: #ffa9b8
 }
 
 .pure-table-bordered td {
@@ -874,7 +873,7 @@ legend {
 
 .pure-table-horizontal td, .pure-table-horizontal th {
     border-width: 0 0 1px;
-    border-bottom: 1px solid #cbcbcb
+    border-bottom: 1px solid #000
 }
 
 .pure-table-horizontal tbody > tr:last-child > td {

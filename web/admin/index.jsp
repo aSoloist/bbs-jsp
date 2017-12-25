@@ -69,7 +69,7 @@
                     <a href="#" class="pure-menu-link">所有帖子</a>
                 </li>
                 <li class="pure-menu-item">
-                    <a href="${pageContext.request.contextPath}/exit" class="pure-menu-link">退出</a>
+                    <a href="#" class="pure-menu-link">退出</a>
                 </li>
             </ul>
         </div>
@@ -81,9 +81,77 @@
         </div>
 
         <div class="content">
-            <h2 class="content-subhead">小标题</h2>
-            <p>内容
-            </p>
+            <h2 class="content-subhead">近期帖子</h2>
+            <div><a href="#">查看全部>></a></div>
+
+            <table class="pure-table pure-table-horizontal">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>标题</th>
+                    <th>内容</th>
+                    <th>日期</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr class="pure-table-odd">
+                    <td>1</td>
+                    <td><a href="#">测试文本</a></td>
+                    <td>测试文本测试文本测试文本</td>
+                    <td>2009</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td><a href="#">测试文本测试文本</a></td>
+                    <td>测试文本测试文本测试文本测试文本</td>
+                    <td>2012</td>
+                </tr>
+
+                <tr class="pure-table-odd">
+                    <td>3</td>
+                    <td><a href="#">测试文本测试文本</a></td>
+                    <td>测试文本测试文本测试文本测试文本测试文本</td>
+                    <td>2010</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td><a href="#">测试文本测试文本</a></td>
+                    <td>Foc测试文本测试文本测试文本us</td>
+                    <td>2008</td>
+                </tr>
+
+                <tr class="pure-table-odd">
+                    <td>5</td>
+                    <td><a href="#">测试文本测试文本测试文本</a></td>
+                    <td>测试文本测试文本测试文本测试文本测试文本</td>
+                    <td>2011</td>
+                </tr>
+
+                <tr>
+                    <td>6</td>
+                    <td><a href="#">测试文本测试文本</a></td>
+                    <td>M测试文本测试文本测试文本测试文本3</td>
+                    <td>2009</td>
+                </tr>
+
+                <tr class="pure-table-odd">
+                    <td>7</td>
+                    <td><a href="#">测试文本测试文本测试文本测试文本</a></td>
+                    <td>测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本</td>
+                    <td>2010</td>
+                </tr>
+
+                <tr>
+                    <td>8</td>
+                    <td><a href="#">测试文本</a></td>
+                    <td>测试文本测试文本测试文本测试文本测试文本测试文本</td>
+                    <td>2010</td>
+                </tr>
+                </tbody>
+            </table>
 
         </div>
     </div>
