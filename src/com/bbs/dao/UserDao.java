@@ -42,6 +42,22 @@ public class UserDao {
         return list;
     }
 
+    public User getByUsername(String username) {
+        String sql = "select * from user where username = ?";
+        User user = null;
+        try {
+            PreparedStatement pstat = getConnection().prepareStatement(sql);
+            pstat.setString(1, username);
+            ResultSet resultSet = pstat.executeQuery();
+            if (resultSet.next()) {
+                user = new User();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+
     public int saveUser(User model) {
         String sql = "insert into user (username, password) values (?, ?)";
         int m = 0;
