@@ -81,9 +81,118 @@
         </div>
 
         <div class="content">
-            <h2 class="content-subhead">小标题</h2>
-            <p>内容
-            </p>
+            <h2 class="content-subhead">所有用户</h2>
+
+            <table class="pure-table pure-table-horizontal">
+                <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>密码</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr class="pure-table-odd">
+                    <td>测试文本</td>
+                    <td>测试文本测试文本测试文本</td>
+                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                </tr>
+
+                <tr>
+                    <td>测试文本测试文本</td>
+                    <td>测试文本测试文本测试文本测试文本</td>
+                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                </tr>
+
+                <tr class="pure-table-odd">
+                    <td>测试文本</td>
+                    <td>测试文本测试文本测试文本</td>
+                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                </tr>
+
+                <tr>
+                    <td>测试文本测试文本</td>
+                    <td>测试文本测试文本测试文本测试文本</td>
+                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                </tr>
+
+                <tr class="pure-table-odd">
+                    <td>测试文本</td>
+                    <td>测试文本测试文本测试文本</td>
+                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                </tr>
+
+                <tr>
+                    <td>测试文本测试文本</td>
+                    <td>测试文本测试文本测试文本测试文本</td>
+                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                </tr>
+
+                <tr class="pure-table-odd">
+                    <td>测试文本</td>
+                    <td>测试文本测试文本测试文本</td>
+                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                </tr>
+
+                <tr>
+                    <td>测试文本测试文本</td>
+                    <td>测试文本测试文本测试文本测试文本</td>
+                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                </tr>
+
+                <tr class="pure-table-odd">
+                    <td>测试文本</td>
+                    <td>测试文本测试文本测试文本</td>
+                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                </tr>
+
+                <tr>
+                    <td>测试文本测试文本</td>
+                    <td>测试文本测试文本测试文本测试文本</td>
+                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                </tr>
+
+                <tr class="pure-table-odd">
+                    <td>测试文本</td>
+                    <td>测试文本测试文本测试文本</td>
+                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                </tr>
+
+                <tr>
+                    <td>测试文本测试文本</td>
+                    <td>测试文本测试文本测试文本测试文本</td>
+                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                </tr>
+
+                <tr class="pure-table-odd">
+                    <td>测试文本</td>
+                    <td>测试文本测试文本测试文本</td>
+                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                </tr>
+
+                <tr>
+                    <td>测试文本测试文本</td>
+                    <td>测试文本测试文本测试文本测试文本</td>
+                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="paging">
+                <span class="disabled"> &lt; </span>
+                <span class="current">1</span>
+                <a href="#?page=2">2</a>
+                <a href="#?page=3">3</a>
+                <a href="#?page=4">4</a>
+                <a href="#?page=5">5</a>
+                <a href="#?page=6">6</a>
+                <a href="#?page=7">7</a>
+                ...
+                <a href="#?page=199">199</a>
+                <a href="#?page=200">200</a>
+                <a href="#?page=2"> &gt; </a>
+            </div>
 
         </div>
     </div>
