@@ -33,7 +33,7 @@ public class StickerDao {
                 sticker.setTitle(resultSet.getString("title"));
                 sticker.setContent(resultSet.getString("content"));
                 sticker.setCreate(resultSet.getTimestamp("create"));
-                sticker.setUserid(resultSet.getInt("userid"));
+                sticker.setUserid(resultSet.getInt("user_id"));
                 list.add(sticker);
             }
         } catch (SQLException e) {
@@ -42,8 +42,29 @@ public class StickerDao {
         return list;
     }
     
+    public Sticker getStickerById(int id) {
+        String sql = "select * from sticker where id = ?";
+        Sticker sticker = null;
+        try {
+            PreparedStatement pstat = getConnection().prepareStatement(sql);
+            pstat.setInt(1, id);
+            ResultSet resultSet = pstat.executeQuery();
+            if (resultSet.next()) {
+                sticker = new Sticker();
+                sticker.setId(resultSet.getInt("id"));
+                sticker.setTitle(resultSet.getString("title"));
+                sticker.setContent(resultSet.getString("content"));
+                sticker.setUserid(resultSet.getInt("user_id"));
+                sticker.setCreate(resultSet.getTimestamp("create"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return sticker;
+    }
+    
     public int saveSticker(Sticker model) {
-        String sql = "insert into sticker (title, content, create, userid) values (?, ?, ?, ?)";
+        String sql = "insert into sticker (title, content, create, user_id) values (?, ?, ?, ?)";
         int m = 0;
         try {
             PreparedStatement pstat = getConnection().prepareStatement(sql);

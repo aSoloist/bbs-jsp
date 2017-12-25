@@ -1,11 +1,3 @@
-<%--suppress ThisExpressionReferencesGlobalObjectJS --%>
-<%--
-  Created by IntelliJ IDEA.
-  User: LiWenfeng
-  Date: 2017/12/25 0025
-  Time: 0:19
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -60,16 +52,16 @@
 
             <ul class="pure-menu-list">
                 <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">主页</a>
+                    <a href="index.jsp" class="pure-menu-link">主页</a>
                 </li>
                 <li class="pure-menu-item menu-item-divided pure-menu-selected">
-                    <a href="#" class="pure-menu-link">所有用户</a>
+                    <a href="users.jsp" class="pure-menu-link">所有用户</a>
                 </li>
                 <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">所有帖子</a>
+                    <a href="stickers.jsp" class="pure-menu-link">所有帖子</a>
                 </li>
                 <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">退出</a>
+                    <a href="/exit" class="pure-menu-link">退出</a>
                 </li>
             </ul>
         </div>

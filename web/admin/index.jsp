@@ -60,16 +60,16 @@
 
             <ul class="pure-menu-list">
                 <li class="pure-menu-item menu-item-divided pure-menu-selected">
-                    <a href="#" class="pure-menu-link">主页</a>
+                    <a href="index.jsp" class="pure-menu-link">主页</a>
                 </li>
                 <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">所有用户</a>
+                    <a href="users.jsp" class="pure-menu-link">所有用户</a>
                 </li>
                 <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">所有帖子</a>
+                    <a href="stickers.jsp" class="pure-menu-link">所有帖子</a>
                 </li>
                 <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">退出</a>
+                    <a href="/exit" class="pure-menu-link">退出</a>
                 </li>
             </ul>
         </div>
@@ -82,7 +82,7 @@
 
         <div class="content">
             <h2 class="content-subhead">近期帖子</h2>
-            <div><a href="#">查看全部>></a></div>
+            <div><a href="stickers.jsp">查看全部>></a></div>
 
             <table class="pure-table pure-table-horizontal">
                 <thead>
