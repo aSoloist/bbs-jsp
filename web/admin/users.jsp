@@ -75,6 +75,10 @@
         <div class="content">
             <h2 class="content-subhead">所有用户</h2>
 
+            <div style="text-align: right">
+                <a href="user.jsp">添加用户>></a>
+            </div>
+
             <table class="pure-table pure-table-horizontal">
                 <thead>
                 <tr>

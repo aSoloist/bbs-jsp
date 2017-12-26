@@ -86,6 +86,7 @@
             <form class="pure-form" style="text-align: right">
                 <input type="text" class="pure-input" title="" placeholder="请输入帖子标题">
                 <button type="submit" class="pure-button">搜索</button>
+                <button type="submit" class="pure-button" onclick='window.location.href("sticker.jsp")'>添加帖子</button>
             </form>
 
             <table class="pure-table pure-table-horizontal">
