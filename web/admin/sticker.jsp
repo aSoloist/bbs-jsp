@@ -179,7 +179,7 @@
                     <img src="test.jpg">
                 </div>
                 <div class="block">
-                    <img src="test.jpg" class="image">
+                    <img src="test.jpg">
                 </div>
             </div>
 
