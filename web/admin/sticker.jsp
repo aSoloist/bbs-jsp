@@ -20,6 +20,24 @@
     <script src="../js/html5shiv.js"></script>
     <![endif]-->
 
+    <style type="text/css">
+        .box {
+            width: 800px;
+            height: 800px;
+        }
+
+        .block {
+            float: left;
+            height: 33%;
+            width: 33%;
+        }
+
+        img {
+            width: 264px;
+            height: 264px;
+        }
+    </style>
+
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
@@ -134,6 +152,36 @@
                 <input id="addButton" class="pure-button" type="button" onclick="addInput();" value="添加图片"/>
                 <input type="submit" value="上传">
             </form>
+
+            <div class="box">
+                <div class="block">
+                    <img src="test.jpg">
+                </div>
+                <div class="block">
+                    <img src="test.jpg">
+                </div>
+                <div class="block">
+                    <img src="test.jpg">
+                </div>
+                <div class="block">
+                    <img src="test.jpg">
+                </div>
+                <div class="block">
+                    <img src="test.jpg">
+                </div>
+                <div class="block">
+                    <img src="test.jpg">
+                </div>
+                <div class="block">
+                    <img src="test.jpg">
+                </div>
+                <div class="block">
+                    <img src="test.jpg">
+                </div>
+                <div class="block">
+                    <img src="test.jpg" class="image">
+                </div>
+            </div>
 
         </div>
     </div>
