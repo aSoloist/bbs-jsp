@@ -36,11 +36,12 @@ public class UploadServlet extends HttpServlet {
             for (int i = 0; i < smartUpload.getFiles().getCount(); i++) {
                 File file = smartUpload.getFiles().getFile(i);
                 if (!file.isMissing()) {
-                    String path = "WEB-INF/images/" + sticker.getTitle() + i + "." + file.getFileExt();
+                    String path = "images/" + sticker.getTitle() + i + "." + file.getFileExt();
+                    String realPath = "admin/" + path;
                     Image image = new Image();
                     image.setStickerId(id);
                     image.setPath(path);
-                    file.saveAs(path, File.SAVEAS_VIRTUAL);
+                    file.saveAs(realPath, File.SAVEAS_VIRTUAL);
                     int result = imageDao.saveImage(image);
                     if (result == 1) {
                         resp.getWriter().write("第" + (i + 1) + "张图片上传成功<br/>");

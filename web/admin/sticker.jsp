@@ -1,5 +1,6 @@
 <%@ page import="com.bbs.bean.Sticker" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.bbs.bean.Image" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -42,8 +43,8 @@
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                };
+                (i[r].q = i[r].q || []).push(arguments)
+            };
             i[r].l = 1 * new Date();
             a = s.createElement(o);
             m = s.getElementsByTagName(o)[0];
@@ -73,16 +74,8 @@
 </head>
 <body>
 <%
-    String sid = request.getParameter("id");
-    int id = Integer.parseInt(sid);
-    Sticker sticker = null;
-    List stickers = (List) session.getAttribute("stickers");
-    for (Object o : stickers) {
-        sticker = (Sticker) o;
-        if (sticker.getId() == id) {
-            break;
-        }
-    }
+    Sticker sticker = (Sticker) request.getAttribute("sticker");
+    List images = (List) request.getAttribute("images");
 %>
 <div id="layout">
     <!-- Menu toggle -->
@@ -146,43 +139,33 @@
                     </div>
                 </fieldset>
             </form>
+            <%
+                if (images.size() == 0) {
+            %>
             <form method="post" action="${pageContext.request.contextPath}/admin/upload" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<%=sticker.getId()%>">
                 <div id="image"></div>
                 <input id="addButton" class="pure-button" type="button" onclick="addInput();" value="添加图片"/>
                 <input type="submit" value="上传">
             </form>
-
+            <%
+            } else {
+            %>
             <div class="box">
+                <%
+                    for (Object o : images) {
+                        Image image = (Image) o;
+                %>
                 <div class="block">
-                    <img src="test.jpg">
+                    <img src="<%=image.getPath()%>">
                 </div>
-                <div class="block">
-                    <img src="test.jpg">
-                </div>
-                <div class="block">
-                    <img src="test.jpg">
-                </div>
-                <div class="block">
-                    <img src="test.jpg">
-                </div>
-                <div class="block">
-                    <img src="test.jpg">
-                </div>
-                <div class="block">
-                    <img src="test.jpg">
-                </div>
-                <div class="block">
-                    <img src="test.jpg">
-                </div>
-                <div class="block">
-                    <img src="test.jpg">
-                </div>
-                <div class="block">
-                    <img src="test.jpg" class="image">
-                </div>
+                <%
+                    }
+                %>
             </div>
-
+            <%
+                }
+            %>
         </div>
     </div>
 </div>

@@ -21,7 +21,7 @@ public class DeleteStickerServlet extends HttpServlet {
             response.setHeader("refresh", "3;url=show");
         } else {
             response.getWriter().write("删除失败");
-            response.setHeader("refresh", "3;url=sticker.jsp");
+            response.setHeader("refresh", "3;url=stickers.jsp");
         }
     }
 }

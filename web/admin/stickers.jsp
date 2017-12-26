@@ -98,7 +98,7 @@
         <div class="content">
             <h2 class="content-subhead">所有帖子</h2>
 
-            <form class="pure-form" style="text-align: right" method="post" action="/admin/search">
+            <form class="pure-form" style="text-align: right" method="post" action="${pageContext.request.contextPath}/admin/search">
                 <input type="text" class="pure-input" title="" placeholder="请输入帖子标题" name="message">
                 <button type="submit" class="pure-button">搜索</button>
                 <button type="button" class="pure-button" onclick='window.location.href="add-sticker.jsp"'>添加帖子</button>
@@ -125,8 +125,16 @@
                         }
                 %>
                 <td><%=sticker.getId()%></td>
-                <td><a href="sticker.jsp?id=<%=sticker.getId()%>"><%=sticker.getTitle()%></a></td>
-                <td><%=sticker.getContent()%></td>
+                <td><a href="/admin/showSticker?id=<%=sticker.getId()%>"><%=sticker.getTitle()%></a></td>
+                <td>
+                <%
+                    String content = sticker.getContent();
+                    if (sticker.getContent().length() > 20) {
+                        content = content.substring(0, 20) + "......";
+                    }
+                    out.print(content);
+                %>
+                </td>
                 <td><%=sticker.getCreate()%></td>
                 </tr>
                 <%

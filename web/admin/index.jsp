@@ -102,8 +102,16 @@
                     }
             %>
                     <td><%=sticker.getId()%></td>
-                    <td><a href="sticker.jsp?id=<%=sticker.getId()%>"><%=sticker.getTitle()%></a></td>
-                    <td><%=sticker.getContent()%></td>
+                    <td><a href="/admin/showSticker?id=<%=sticker.getId()%>"><%=sticker.getTitle()%></a></td>
+                    <td>
+                    <%
+                        String content = sticker.getContent();
+                        if (sticker.getContent().length() > 20) {
+                            content = content.substring(0, 20) + "......";
+                        }
+                        out.print(content);
+                    %>
+                    </td>
                     <td><%=sticker.getCreate()%></td>
                 </tr>
             <%
