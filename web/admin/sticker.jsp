@@ -121,7 +121,7 @@
                     <br>
 
                     <div id="image"></div>
-                    <input id="addButton" class="pure-button" type="button" onclick="addInput();" value="添加"/>
+                    <input id="addButton" class="pure-button" type="button" onclick="addInput();" value="添加图片"/>
 
                     <div align="center">
                         <button type="submit" class="pure-button pure-button-primary" onclick="return confirm('确认删除？')">
