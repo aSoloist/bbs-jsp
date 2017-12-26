@@ -88,13 +88,13 @@
 
                     <div class="pure-g">
                         <div class="pure-u-1 pure-u-md-1-3">
-                            <label for="first-name">用户名</label>
-                            <input id="first-name" class="pure-u-23-24" type="text">
+                            <label for="username">用户名</label>
+                            <input id="username" class="pure-u-23-24" type="text">
                         </div>
 
                         <div class="pure-u-1 pure-u-md-1-3">
-                            <label for="last-name">密码</label>
-                            <input id="last-name" class="pure-u-23-24" type="password">
+                            <label for="password">密码</label>
+                            <input id="password" class="pure-u-23-24" type="password">
                         </div>
                     </div>
                     <br>
