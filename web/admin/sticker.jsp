@@ -37,6 +37,8 @@
         ga('create', 'UA-41480445-1', 'purecss.io');
         ga('send', 'pageview');
 
+        var i = 1;
+
         function addInput() {
             var input1 = document.createElement('input');
             input1.setAttribute('type', 'file');
