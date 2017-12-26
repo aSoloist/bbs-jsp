@@ -127,4 +127,14 @@
         <servlet-name>allStickerServlet</servlet-name>
         <url-pattern>/admin/allSticker</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>uploadServlet</servlet-name>
+        <servlet-class>com.bbs.servlet.UploadServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>uploadServlet</servlet-name>
+        <url-pattern>/admin/upload</url-pattern>
+    </servlet-mapping>
 </web-app>

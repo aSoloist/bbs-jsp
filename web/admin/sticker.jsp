@@ -121,16 +121,18 @@
                         </div>
                     </div>
                     <br>
-
-                    <div id="image"></div>
-                    <input id="addButton" class="pure-button" type="button" onclick="addInput();" value="添加图片"/>
-
                     <div align="center">
                         <button type="submit" class="pure-button pure-button-primary" onclick="return confirm('确认删除？')">
                             删除
                         </button>
                     </div>
                 </fieldset>
+            </form>
+            <form method="post" action="${pageContext.request.contextPath}/admin/upload" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<%=sticker.getId()%>">
+                <div id="image"></div>
+                <input id="addButton" class="pure-button" type="button" onclick="addInput();" value="添加图片"/>
+                <input type="submit" value="上传">
             </form>
 
         </div>
