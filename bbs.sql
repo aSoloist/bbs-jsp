@@ -88,6 +88,7 @@ CREATE TABLE `user` (
 --
 -- Dumping data for table `user`
 --
+INSERT INTO `user` (id, username, password) VALUES (100001, 'root', '123456');
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
