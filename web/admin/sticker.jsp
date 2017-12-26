@@ -40,13 +40,15 @@
         var i = 1;
 
         function addInput() {
-            var input1 = document.createElement('input');
-            input1.setAttribute('type', 'file');
-            input1.setAttribute('name', 'image' + i++);
-            input1.setAttribute('class', 'pure-button');
+            if (i <= 9) {
+                var input1 = document.createElement('input');
+                input1.setAttribute('type', 'file');
+                input1.setAttribute('name', 'image' + i++);
+                input1.setAttribute('class', 'pure-button');
 
-            var btn1 = document.getElementById("image");
-            btn1.insertBefore(input1, null);
+                var btn1 = document.getElementById("image");
+                btn1.insertBefore(input1, null);
+            }
         }
     </script>
 
