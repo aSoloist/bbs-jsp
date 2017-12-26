@@ -9,7 +9,7 @@ import java.util.List;
 
 public class UserDao {
     private Connection connection = null;
-    
+
     private Connection getConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -20,9 +20,9 @@ public class UserDao {
 
         return connection;
     }
-    
+
     public List<User> getUser() {
-        String sql = "select * from user";
+        String sql = "SELECT * FROM user";
         PreparedStatement pstat;
         List<User> list = new ArrayList<>();
         User user;
@@ -43,7 +43,7 @@ public class UserDao {
     }
 
     public User getByUsername(String username) {
-        String sql = "select * from user where username = ?";
+        String sql = "SELECT * FROM user WHERE username = ?";
         User user = null;
         try {
             PreparedStatement pstat = getConnection().prepareStatement(sql);
@@ -62,7 +62,7 @@ public class UserDao {
     }
 
     public int saveUser(User model) {
-        String sql = "insert into user (username, password) values (?, ?)";
+        String sql = "INSERT INTO user (username, password) VALUES (?, ?)";
         int m = 0;
         try {
             PreparedStatement pstat = getConnection().prepareStatement(sql);
@@ -74,9 +74,9 @@ public class UserDao {
         }
         return m;
     }
-    
+
     public int updateUser(User model) {
-        String sql = "update user set username = ?, password = ? where id = ?";
+        String sql = "UPDATE user SET username = ?, password = ? WHERE id = ?";
         int m = 0;
         try {
             PreparedStatement pstat = getConnection().prepareStatement(sql);
@@ -89,9 +89,9 @@ public class UserDao {
         }
         return m;
     }
-    
+
     public int deleteUser(int id) {
-        String sql = "delete from user where id = ?";
+        String sql = "DELETE FROM user WHERE id = ?";
         int m = 0;
         try {
             PreparedStatement pstat = getConnection().prepareStatement(sql);
@@ -102,7 +102,7 @@ public class UserDao {
         }
         return m;
     }
-    
+
     public boolean isUserExist(String username) {
         String sql = "select * from user where username = ?";
         try {
