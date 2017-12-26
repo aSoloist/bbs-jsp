@@ -1,4 +1,5 @@
-<%--suppress ThisExpressionReferencesGlobalObjectJS --%>
+<%@ page import="com.bbs.bean.Sticker" %>
+<%@ page import="java.util.List" %><%--suppress ThisExpressionReferencesGlobalObjectJS --%>
 <%--
   Created by IntelliJ IDEA.
   User: LiWenfeng
@@ -46,7 +47,20 @@
 
 </head>
 <body>
-
+<%
+    List stickers = (List) session.getAttribute("stickers");
+    String s = request.getParameter("page");
+    int pages = 1;
+    if (s != null) {
+        pages = Integer.parseInt(s);
+    }
+    int row = 15;
+    int totalPage = stickers.size() % row == 0 ? stickers.size() / row : stickers.size() / row + 1;
+    int startIndex = pages * row - row;
+    if (pages == totalPage || totalPage == 0) {
+        row = stickers.size() - (pages - 1) * row;
+    }
+%>
 <div id="layout">
     <!-- Menu toggle -->
     <a href="#menu" id="menuLink" class="menu-link">
@@ -86,7 +100,7 @@
             <form class="pure-form" style="text-align: right">
                 <input type="text" class="pure-input" title="" placeholder="请输入帖子标题">
                 <button type="submit" class="pure-button">搜索</button>
-                <button type="submit" class="pure-button" onclick='window.location.href("sticker.jsp")'>添加帖子</button>
+                <button type="button" class="pure-button" onclick='window.location.href="sticker.jsp"'>添加帖子</button>
             </form>
 
             <table class="pure-table pure-table-horizontal">
@@ -100,126 +114,48 @@
                 </thead>
 
                 <tbody>
-                <tr class="pure-table-odd">
-                    <td>1</td>
-                    <td><a href="#">测试文本</a></td>
-                    <td>测试文本测试文本测试文本</td>
-                    <td>2009</td>
+                <%
+                    for (int i = startIndex; i < row; i++) {
+                        Sticker sticker = (Sticker) stickers.get(i);
+                        if (i % 2 != 0) {
+                            out.print("<tr class=\"pure-table-odd\">");
+                        } else {
+                            out.print("<tr>");
+                        }
+                %>
+                <td><%=sticker.getId()%></td>
+                <td><a href="#"><%=sticker.getTitle()%></a></td>
+                <td><%=sticker.getContent()%></td>
+                <td><%=sticker.getCreate()%></td>
                 </tr>
-
-                <tr>
-                    <td>2</td>
-                    <td><a href="#">测试文本测试文本</a></td>
-                    <td>测试文本测试文本测试文本测试文本</td>
-                    <td>2012</td>
-                </tr>
-
-                <tr class="pure-table-odd">
-                    <td>3</td>
-                    <td><a href="#">测试文本测试文本</a></td>
-                    <td>测试文本测试文本测试文本测试文本测试文本</td>
-                    <td>2010</td>
-                </tr>
-
-                <tr>
-                    <td>4</td>
-                    <td><a href="#">测试文本测试文本</a></td>
-                    <td>Foc测试文本测试文本测试文本us</td>
-                    <td>2008</td>
-                </tr>
-
-                <tr class="pure-table-odd">
-                    <td>5</td>
-                    <td><a href="#">测试文本测试文本测试文本</a></td>
-                    <td>测试文本测试文本测试文本测试文本测试文本</td>
-                    <td>2011</td>
-                </tr>
-
-                <tr>
-                    <td>6</td>
-                    <td><a href="#">测试文本测试文本</a></td>
-                    <td>M测试文本测试文本测试文本测试文本3</td>
-                    <td>2009</td>
-                </tr>
-
-                <tr class="pure-table-odd">
-                    <td>7</td>
-                    <td><a href="#">测试文本测试文本测试文本</a></td>
-                    <td>测试文本测试文本测试文本测试文本测试文本测试文本</td>
-                    <td>2010</td>
-                </tr>
-
-                <tr>
-                    <td>8</td>
-                    <td><a href="#">测试文本</a></td>
-                    <td>测试文本测试文本测试文本测试文本测试文本测试文本</td>
-                    <td>2010</td>
-                </tr>
-
-                <tr class="pure-table-odd">
-                    <td>9</td>
-                    <td><a href="#">测试文本</a></td>
-                    <td>测试文本测试文本测试文本</td>
-                    <td>2009</td>
-                </tr>
-
-                <tr>
-                    <td>10</td>
-                    <td><a href="#">测试文本测试文本</a></td>
-                    <td>测试文本测试文本测试文本测试文本</td>
-                    <td>2012</td>
-                </tr>
-
-                <tr class="pure-table-odd">
-                    <td>11</td>
-                    <td><a href="#">测试文本测试文本</a></td>
-                    <td>测试文本测试文本测试文本测试文本测试文本</td>
-                    <td>2010</td>
-                </tr>
-
-                <tr>
-                    <td>12</td>
-                    <td><a href="#">测试文本测试文本</a></td>
-                    <td>Foc测试文本测试文本测试文本us</td>
-                    <td>2008</td>
-                </tr>
-
-                <tr class="pure-table-odd">
-                    <td>13</td>
-                    <td><a href="#">测试文本测试文本测试文本</a></td>
-                    <td>测试文本测试文本测试文本测试文本测试文本</td>
-                    <td>2011</td>
-                </tr>
-
-                <tr>
-                    <td>14</td>
-                    <td><a href="#">测试文本测试文本</a></td>
-                    <td>M测试文本测试文本测试文本测试文本3</td>
-                    <td>2009</td>
-                </tr>
-
-                <tr class="pure-table-odd">
-                    <td>15</td>
-                    <td><a href="#">测试文本测试文本测试文本</a></td>
-                    <td>测试文本测试文本测试文本测试文本测试文本</td>
-                    <td>2011</td>
-                </tr>
+                <%
+                    }
+                %>
                 </tbody>
             </table>
 
             <div class="paging">
-                <span class="disabled"> &lt; </span>
-                <span class="current">1</span>
-                <a href="#?page=2">2</a>
-                <a href="#?page=3">3</a>
-                <a href="#?page=4">4</a>
-                <a href="#?page=5">5</a>
-                <a href="#?page=6">6</a>
-                <a href="#?page=7">7</a>
-                ...
-                <a href="#?page=199">199</a>
-                <a href="#?page=200">200</a>
-                <a href="#?page=2"> &gt; </a>
+            <%
+                if (pages == 1) {
+                    out.print("<span class=\"disabled\"> &lt; </span>");
+                } else {
+                    out.print("<a href=\"stickers.jsp?page=" + (pages - 1) + "\"> &lt; </a>");
+                }
+                
+                for (int i = 1; i <= totalPage; i++) {
+                    if (pages == i) {
+                        out.print("<span class=\"current\">" + i + "</span>");
+                    } else {
+                        out.print("<a href=\"stickers.jsp?page=" + i + "\">" + i + "</a>");
+                    }
+                }
+
+                if (pages == totalPage || totalPage == 0) {
+                    out.print("<span class=\"disabled\"> &gt; </span>");
+                } else {
+                    out.print("<a href=\"stickers.jsp?page=" + (pages + 1) + "\"> &gt; </a>");
+                }
+            %>
             </div>
 
         </div>

@@ -21,7 +21,7 @@ public class StickerDao {
     }
     
     public List<Sticker> getStick() {
-        String sql = "select * from sticker";
+        String sql = "SELECT * FROM sticker";
         List<Sticker> list = new ArrayList<>();
         Sticker sticker;
         try {
@@ -32,7 +32,7 @@ public class StickerDao {
                 sticker.setId(resultSet.getInt("id"));
                 sticker.setTitle(resultSet.getString("title"));
                 sticker.setContent(resultSet.getString("content"));
-                sticker.setCreate(resultSet.getTimestamp("create"));
+                sticker.setCreate(resultSet.getTimestamp("create_time"));
                 sticker.setUserid(resultSet.getInt("user_id"));
                 list.add(sticker);
             }
@@ -43,7 +43,7 @@ public class StickerDao {
     }
     
     public Sticker getStickerById(int id) {
-        String sql = "select * from sticker where id = ?";
+        String sql = "SELECT * FROM sticker WHERE id = ?";
         Sticker sticker = null;
         try {
             PreparedStatement pstat = getConnection().prepareStatement(sql);
@@ -55,7 +55,7 @@ public class StickerDao {
                 sticker.setTitle(resultSet.getString("title"));
                 sticker.setContent(resultSet.getString("content"));
                 sticker.setUserid(resultSet.getInt("user_id"));
-                sticker.setCreate(resultSet.getTimestamp("create"));
+                sticker.setCreate(resultSet.getTimestamp("create_time"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -64,7 +64,7 @@ public class StickerDao {
     }
     
     public int saveSticker(Sticker model) {
-        String sql = "insert into sticker (title, content, create, user_id) values (?, ?, ?, ?)";
+        String sql = "INSERT INTO sticker (title, content, create_time, user_id) VALUES (?, ?, ?, ?)";
         int m = 0;
         try {
             PreparedStatement pstat = getConnection().prepareStatement(sql);

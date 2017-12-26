@@ -1,3 +1,5 @@
+<%@ page import="java.util.List" %>
+<%@ page import="com.bbs.bean.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -38,7 +40,20 @@
 
 </head>
 <body>
-
+<%
+    List users = (List) session.getAttribute("users");
+    String s = request.getParameter("page");
+    int pages = 1;
+    if (s != null) {
+        pages = Integer.parseInt(s);
+    }
+    int row = 15;
+    int totalPage = users.size() % row == 0 ? users.size() / row : users.size() / row + 1;
+    int startIndex = pages * row - row;
+    if (pages == totalPage || totalPage == 0) {
+        row = users.size() - (pages - 1) * row;
+    }
+%>
 <div id="layout">
     <!-- Menu toggle -->
     <a href="#menu" id="menuLink" class="menu-link">
@@ -89,105 +104,47 @@
                 </thead>
 
                 <tbody>
-                <tr class="pure-table-odd">
-                    <td>测试文本</td>
-                    <td>测试文本测试文本测试文本</td>
-                    <td><a href="#">删除</a></td>
+                <%
+                    for (int i = startIndex; i < row; i++) {
+                        User user = (User) users.get(i);
+                        if (i % 2 != 0) {
+                            out.print("<tr class=\"pure-table-odd\">");
+                        } else {
+                            out.print("<tr>");
+                        }
+                %>
+                    <td><%=user.getUsername()%></td>
+                    <td><%=user.getPassword()%></td>
+                    <td><a href="${pageContext.request.contextPath}/admin/delete?id=<%=user.getId()%>" onclick="return confirm('确认删除？');">删除</a></td>
                 </tr>
-
-                <tr>
-                    <td>测试文本测试文本</td>
-                    <td>测试文本测试文本测试文本测试文本</td>
-                    <td><a href="#">删除</a></td>
-                </tr>
-
-                <tr class="pure-table-odd">
-                    <td>测试文本</td>
-                    <td>测试文本测试文本测试文本</td>
-                    <td><a href="#">删除</a></td>
-                </tr>
-
-                <tr>
-                    <td>测试文本测试文本</td>
-                    <td>测试文本测试文本测试文本测试文本</td>
-                    <td><a href="#">删除</a></td>
-                </tr>
-
-                <tr class="pure-table-odd">
-                    <td>测试文本</td>
-                    <td>测试文本测试文本测试文本</td>
-                    <td><a href="#">删除</a></td>
-                </tr>
-
-                <tr>
-                    <td>测试文本测试文本</td>
-                    <td>测试文本测试文本测试文本测试文本</td>
-                    <td><a href="#">删除</a></td>
-                </tr>
-
-                <tr class="pure-table-odd">
-                    <td>测试文本</td>
-                    <td>测试文本测试文本测试文本</td>
-                    <td><a href="#">删除</a></td>
-                </tr>
-
-                <tr>
-                    <td>测试文本测试文本</td>
-                    <td>测试文本测试文本测试文本测试文本</td>
-                    <td><a href="#">删除</a></td>
-                </tr>
-
-                <tr class="pure-table-odd">
-                    <td>测试文本</td>
-                    <td>测试文本测试文本测试文本</td>
-                    <td><a href="#">删除</a></td>
-                </tr>
-
-                <tr>
-                    <td>测试文本测试文本</td>
-                    <td>测试文本测试文本测试文本测试文本</td>
-                    <td><a href="#">删除</a></td>
-                </tr>
-
-                <tr class="pure-table-odd">
-                    <td>测试文本</td>
-                    <td>测试文本测试文本测试文本</td>
-                    <td><a href="#">删除</a></td>
-                </tr>
-
-                <tr>
-                    <td>测试文本测试文本</td>
-                    <td>测试文本测试文本测试文本测试文本</td>
-                    <td><a href="#">删除</a></td>
-                </tr>
-
-                <tr class="pure-table-odd">
-                    <td>测试文本</td>
-                    <td>测试文本测试文本测试文本</td>
-                    <td><a href="#">删除</a></td>
-                </tr>
-
-                <tr>
-                    <td>测试文本测试文本</td>
-                    <td>测试文本测试文本测试文本测试文本</td>
-                    <td><a href="#">删除</a></td>
-                </tr>
+                <%
+                    }
+                %>
                 </tbody>
             </table>
 
             <div class="paging">
-                <span class="disabled"> &lt; </span>
-                <span class="current">1</span>
-                <a href="#?page=2">2</a>
-                <a href="#?page=3">3</a>
-                <a href="#?page=4">4</a>
-                <a href="#?page=5">5</a>
-                <a href="#?page=6">6</a>
-                <a href="#?page=7">7</a>
-                ...
-                <a href="#?page=199">199</a>
-                <a href="#?page=200">200</a>
-                <a href="#?page=2"> &gt; </a>
+                <%
+                    if (pages == 1) {
+                        out.print("<span class=\"disabled\"> &lt; </span>");
+                    } else {
+                        out.print("<a href=\"stickers.jsp?page=" + (pages - 1) + "\"> &lt; </a>");
+                    }
+
+                    for (int i = 1; i <= totalPage; i++) {
+                        if (pages == i) {
+                            out.print("<span class=\"current\">" + i + "</span>");
+                        } else {
+                            out.print("<a href=\"stickers.jsp?page=" + i + "\">" + i + "</a>");
+                        }
+                    }
+
+                    if (pages == totalPage || totalPage == 0) {
+                        out.print("<span class=\"disabled\"> &gt; </span>");
+                    } else {
+                        out.print("<a href=\"stickers.jsp?page=" + (pages + 1) + "\"> &gt; </a>");
+                    }
+                %>
             </div>
 
         </div>

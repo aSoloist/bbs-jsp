@@ -16,6 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `image`
+--
+
+DROP TABLE IF EXISTS `image`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `image` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `sticker_id` int(6) NOT NULL,
+  `path` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `Image_sticker_id_fk` (`sticker_id`),
+  CONSTRAINT `Image_sticker_id_fk` FOREIGN KEY (`sticker_id`) REFERENCES `sticker` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `image`
+--
+
+LOCK TABLES `image` WRITE;
+/*!40000 ALTER TABLE `image` DISABLE KEYS */;
+/*!40000 ALTER TABLE `image` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `sticker`
 --
 
@@ -26,11 +52,11 @@ CREATE TABLE `sticker` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
   `title` varchar(36) NOT NULL,
   `content` text NOT NULL,
-  `create` datetime NOT NULL,
-  `userid` int(11) NOT NULL,
+  `create_time` datetime NOT NULL,
+  `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `sticker_user_id_fk` (`userid`),
-  CONSTRAINT `sticker_user_id_fk` FOREIGN KEY (`userid`) REFERENCES `user` (`id`)
+  KEY `sticker_user_id_fk` (`user_id`),
+  CONSTRAINT `sticker_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -56,7 +82,7 @@ CREATE TABLE `user` (
   `password` varchar(36) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_username_uindex` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=100003 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=100002 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -78,4 +104,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-24 19:09:25
+-- Dump completed on 2017-12-26 18:14:09

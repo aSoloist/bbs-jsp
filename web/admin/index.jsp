@@ -1,4 +1,5 @@
-<%--suppress ThisExpressionReferencesGlobalObjectJS --%>
+<%@ page import="com.bbs.bean.Sticker" %>
+<%@ page import="java.util.List" %><%--suppress ThisExpressionReferencesGlobalObjectJS --%>
 <%--
   Created by IntelliJ IDEA.
   User: LiWenfeng
@@ -30,8 +31,8 @@
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                };
+                (i[r].q = i[r].q || []).push(arguments)
+            };
             i[r].l = 1 * new Date();
             a = s.createElement(o);
             m = s.getElementsByTagName(o)[0];
@@ -46,7 +47,9 @@
 
 </head>
 <body>
-
+<%
+    List stickers = (List) session.getAttribute("stickers");
+%>
 <div id="layout">
     <!-- Menu toggle -->
     <a href="#menu" id="menuLink" class="menu-link">
@@ -69,7 +72,7 @@
                     <a href="stickers.jsp" class="pure-menu-link">所有帖子</a>
                 </li>
                 <li class="pure-menu-item">
-                    <a href="/exit" class="pure-menu-link">退出</a>
+                    <a href="${pageContext.request.contextPath}/exit" class="pure-menu-link">退出</a>
                 </li>
             </ul>
         </div>
@@ -95,61 +98,24 @@
                 </thead>
 
                 <tbody>
-                <tr class="pure-table-odd">
-                    <td>1</td>
-                    <td><a href="#">测试文本</a></td>
-                    <td>测试文本测试文本测试文本</td>
-                    <td>2009</td>
+            <%
+                int row = stickers.size() < 8 ? stickers.size() : 8;
+                for (int i = 0; i < row; i++) {
+                    Sticker sticker = (Sticker) stickers.get(i);
+                    if (i % 2 != 0) {
+                        out.print("<tr class=\"pure-table-odd\">");
+                    } else {
+                        out.print("<tr>");
+                    }
+            %>
+                    <td><%=sticker.getId()%></td>
+                    <td><a href="#"><%=sticker.getTitle()%></a></td>
+                    <td><%=sticker.getContent()%></td>
+                    <td><%=sticker.getCreate()%></td>
                 </tr>
-
-                <tr>
-                    <td>2</td>
-                    <td><a href="#">测试文本测试文本</a></td>
-                    <td>测试文本测试文本测试文本测试文本</td>
-                    <td>2012</td>
-                </tr>
-
-                <tr class="pure-table-odd">
-                    <td>3</td>
-                    <td><a href="#">测试文本测试文本</a></td>
-                    <td>测试文本测试文本测试文本测试文本测试文本</td>
-                    <td>2010</td>
-                </tr>
-
-                <tr>
-                    <td>4</td>
-                    <td><a href="#">测试文本测试文本</a></td>
-                    <td>Foc测试文本测试文本测试文本us</td>
-                    <td>2008</td>
-                </tr>
-
-                <tr class="pure-table-odd">
-                    <td>5</td>
-                    <td><a href="#">测试文本测试文本测试文本</a></td>
-                    <td>测试文本测试文本测试文本测试文本测试文本</td>
-                    <td>2011</td>
-                </tr>
-
-                <tr>
-                    <td>6</td>
-                    <td><a href="#">测试文本测试文本</a></td>
-                    <td>M测试文本测试文本测试文本测试文本3</td>
-                    <td>2009</td>
-                </tr>
-
-                <tr class="pure-table-odd">
-                    <td>7</td>
-                    <td><a href="#">测试文本测试文本测试文本测试文本</a></td>
-                    <td>测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本</td>
-                    <td>2010</td>
-                </tr>
-
-                <tr>
-                    <td>8</td>
-                    <td><a href="#">测试文本</a></td>
-                    <td>测试文本测试文本测试文本测试文本测试文本测试文本</td>
-                    <td>2010</td>
-                </tr>
+            <%
+                }
+            %>
                 </tbody>
             </table>
 

@@ -67,4 +67,14 @@
         <servlet-name>showStickerServlet</servlet-name>
         <url-pattern>/admin/showSticker</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>deleteUserServlet</servlet-name>
+        <servlet-class>com.bbs.servlet.DeleteUserServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>deleteUserServlet</servlet-name>
+        <url-pattern>/admin/delete</url-pattern>
+    </servlet-mapping>
 </web-app>

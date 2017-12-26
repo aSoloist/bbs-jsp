@@ -21,7 +21,8 @@ public class LoginFilter implements Filter {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
         if (user == null) {
-            ((HttpServletResponse) servletResponse).sendRedirect("/login.jsp");
+            response.getWriter().write("请先登录");
+            response.setHeader("refresh", "3;url=../login.jsp");
         } else {
             filterChain.doFilter(request, response);
         }

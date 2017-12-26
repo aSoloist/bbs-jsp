@@ -104,7 +104,7 @@ public class UserDao {
     }
 
     public boolean isUserExist(String username) {
-        String sql = "select * from user where username = ?";
+        String sql = "SELECT * FROM user WHERE username = ?";
         try {
             PreparedStatement pstat = getConnection().prepareStatement(sql);
             pstat.setString(1, username);
