@@ -88,85 +88,85 @@
                 <tr class="pure-table-odd">
                     <td>测试文本</td>
                     <td>测试文本测试文本测试文本</td>
-                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                    <td><a href="#">删除</a></td>
                 </tr>
 
                 <tr>
                     <td>测试文本测试文本</td>
                     <td>测试文本测试文本测试文本测试文本</td>
-                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                    <td><a href="#">删除</a></td>
                 </tr>
 
                 <tr class="pure-table-odd">
                     <td>测试文本</td>
                     <td>测试文本测试文本测试文本</td>
-                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                    <td><a href="#">删除</a></td>
                 </tr>
 
                 <tr>
                     <td>测试文本测试文本</td>
                     <td>测试文本测试文本测试文本测试文本</td>
-                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                    <td><a href="#">删除</a></td>
                 </tr>
 
                 <tr class="pure-table-odd">
                     <td>测试文本</td>
                     <td>测试文本测试文本测试文本</td>
-                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                    <td><a href="#">删除</a></td>
                 </tr>
 
                 <tr>
                     <td>测试文本测试文本</td>
                     <td>测试文本测试文本测试文本测试文本</td>
-                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                    <td><a href="#">删除</a></td>
                 </tr>
 
                 <tr class="pure-table-odd">
                     <td>测试文本</td>
                     <td>测试文本测试文本测试文本</td>
-                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                    <td><a href="#">删除</a></td>
                 </tr>
 
                 <tr>
                     <td>测试文本测试文本</td>
                     <td>测试文本测试文本测试文本测试文本</td>
-                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                    <td><a href="#">删除</a></td>
                 </tr>
 
                 <tr class="pure-table-odd">
                     <td>测试文本</td>
                     <td>测试文本测试文本测试文本</td>
-                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                    <td><a href="#">删除</a></td>
                 </tr>
 
                 <tr>
                     <td>测试文本测试文本</td>
                     <td>测试文本测试文本测试文本测试文本</td>
-                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                    <td><a href="#">删除</a></td>
                 </tr>
 
                 <tr class="pure-table-odd">
                     <td>测试文本</td>
                     <td>测试文本测试文本测试文本</td>
-                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                    <td><a href="#">删除</a></td>
                 </tr>
 
                 <tr>
                     <td>测试文本测试文本</td>
                     <td>测试文本测试文本测试文本测试文本</td>
-                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                    <td><a href="#">删除</a></td>
                 </tr>
 
                 <tr class="pure-table-odd">
                     <td>测试文本</td>
                     <td>测试文本测试文本测试文本</td>
-                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                    <td><a href="#">删除</a></td>
                 </tr>
 
                 <tr>
                     <td>测试文本测试文本</td>
                     <td>测试文本测试文本测试文本测试文本</td>
-                    <td><a href="#">编辑</a>&nbsp;<a href="#">删除</a></td>
+                    <td><a href="#">删除</a></td>
                 </tr>
                 </tbody>
             </table>
