@@ -36,6 +36,16 @@
 
         ga('create', 'UA-41480445-1', 'purecss.io');
         ga('send', 'pageview');
+
+        function addInput() {
+            var input1 = document.createElement('input');
+            input1.setAttribute('type', 'file');
+            input1.setAttribute('name', 'image' + i++);
+            input1.setAttribute('class', 'pure-button');
+
+            var btn1 = document.getElementById("image");
+            btn1.insertBefore(input1, null);
+        }
     </script>
 
 </head>
@@ -88,25 +98,33 @@
         <div class="content">
             <h2 class="content-subhead">查看帖子</h2>
 
-            <form class="pure-form pure-form-stacked" action="${pageContext.request.contextPath}/admin/deleteSticker" method="post">
+            <form class="pure-form pure-form-stacked" action="${pageContext.request.contextPath}/admin/deleteSticker"
+                  method="post">
                 <fieldset>
 
                     <div class="pure-g">
                         <input type="hidden" name="id" value="<%=sticker.getId()%>">
                         <div class="pure-u-1 pure-u-md-1-3">
                             <label for="title">标题</label>
-                            <input id="title" class="pure-u-23-24" type="text" name="title" readonly="readonly" value="<%=sticker.getTitle()%>">
+                            <input id="title" class="pure-u-23-24" type="text" name="title" readonly="readonly"
+                                   value="<%=sticker.getTitle()%>">
                         </div>
 
                         <div class="pure-u-1 pure-u-md-1-3">
                             <label for="content">内容</label>
-                            <textarea id="content" class="pure-u-23-24" rows="15" name="content" readonly="readonly"><%=sticker.getContent()%></textarea>
+                            <textarea id="content" class="pure-u-23-24" rows="15" name="content"
+                                      readonly="readonly"><%=sticker.getContent()%></textarea>
                         </div>
                     </div>
                     <br>
 
+                    <div id="image"></div>
+                    <input id="addButton" class="pure-button" type="button" onclick="addInput();" value="添加"/>
+
                     <div align="center">
-                        <button type="submit" class="pure-button pure-button-primary" onclick="return confirm('确认删除？')">删除</button>
+                        <button type="submit" class="pure-button pure-button-primary" onclick="return confirm('确认删除？')">
+                            删除
+                        </button>
                     </div>
                 </fieldset>
             </form>
