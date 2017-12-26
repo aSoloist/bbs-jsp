@@ -81,9 +81,29 @@
         </div>
 
         <div class="content">
-            <h2 class="content-subhead">小标题</h2>
-            <p>内容
-            </p>
+            <h2 class="content-subhead">添加用户</h2>
+
+            <form class="pure-form pure-form-stacked">
+                <fieldset>
+
+                    <div class="pure-g">
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <label for="first-name">用户名</label>
+                            <input id="first-name" class="pure-u-23-24" type="text">
+                        </div>
+
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <label for="last-name">密码</label>
+                            <input id="last-name" class="pure-u-23-24" type="password">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div align="center">
+                        <button type="submit" class="pure-button pure-button-primary">确定</button>
+                    </div>
+                </fieldset>
+            </form>
 
         </div>
     </div>
