@@ -24,7 +24,7 @@ public class ShowStickerServlet extends HttpServlet {
             List<Image> images = imageDao.getImages(id);
             request.setAttribute("sticker", sticker);
             request.setAttribute("images", images);
-            request.getRequestDispatcher("/sticker.jsp").forward(request, response);
+            request.getRequestDispatcher("/add-sticker.jsp").forward(request, response);
         } else {
             response.getWriter().write("帖子不存在");
         }

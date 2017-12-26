@@ -83,18 +83,18 @@
         <div class="content">
             <h2 class="content-subhead">添加用户</h2>
 
-            <form class="pure-form pure-form-stacked">
+            <form class="pure-form pure-form-stacked" action="${pageContext.request.contextPath}/admin/addUser" method="post">
                 <fieldset>
 
                     <div class="pure-g">
                         <div class="pure-u-1 pure-u-md-1-3">
                             <label for="username">用户名</label>
-                            <input id="username" class="pure-u-23-24" type="text">
+                            <input id="username" class="pure-u-23-24" type="text" name="username">
                         </div>
 
                         <div class="pure-u-1 pure-u-md-1-3">
                             <label for="password">密码</label>
-                            <input id="password" class="pure-u-23-24" type="password">
+                            <input id="password" class="pure-u-23-24" type="password" name="password">
                         </div>
                     </div>
                     <br>

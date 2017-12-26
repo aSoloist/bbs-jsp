@@ -77,4 +77,54 @@
         <servlet-name>deleteUserServlet</servlet-name>
         <url-pattern>/admin/delete</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>addUserServlet</servlet-name>
+        <servlet-class>com.bbs.servlet.AddUserServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>addUserServlet</servlet-name>
+        <url-pattern>/admin/addUser</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>addStickerServlet</servlet-name>
+        <servlet-class>com.bbs.servlet.AddStickerServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>addStickerServlet</servlet-name>
+        <url-pattern>/admin/addSticker</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>deleteStickerServlet</servlet-name>
+        <servlet-class>com.bbs.servlet.DeleteStickerServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>deleteStickerServlet</servlet-name>
+        <url-pattern>/admin/deleteSticker</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>searchServlet</servlet-name>
+        <servlet-class>com.bbs.servlet.SearchServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>searchServlet</servlet-name>
+        <url-pattern>/admin/search</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>allStickerServlet</servlet-name>
+        <servlet-class>com.bbs.servlet.AllStickerServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>allStickerServlet</servlet-name>
+        <url-pattern>/admin/allSticker</url-pattern>
+    </servlet-mapping>
 </web-app>

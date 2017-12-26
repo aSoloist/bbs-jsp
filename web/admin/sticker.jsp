@@ -1,11 +1,5 @@
-<%--suppress ThisExpressionReferencesGlobalObjectJS --%>
-<%--
-  Created by IntelliJ IDEA.
-  User: LiWenfeng
-  Date: 2017/12/25 0025
-  Time: 0:19
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="com.bbs.bean.Sticker" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -46,7 +40,18 @@
 
 </head>
 <body>
-
+<%
+    String sid = request.getParameter("id");
+    int id = Integer.parseInt(sid);
+    Sticker sticker = null;
+    List stickers = (List) session.getAttribute("stickers");
+    for (Object o : stickers) {
+        sticker = (Sticker) o;
+        if (sticker.getId() == id) {
+            break;
+        }
+    }
+%>
 <div id="layout">
     <!-- Menu toggle -->
     <a href="#menu" id="menuLink" class="menu-link">
@@ -60,13 +65,13 @@
 
             <ul class="pure-menu-list">
                 <li class="pure-menu-item">
-                    <a href="index.jsp" class="pure-menu-link">主页</a>
+                    <a href="${pageContext.request.contextPath}/admin/allSticker" class="pure-menu-link">主页</a>
                 </li>
                 <li class="pure-menu-item">
                     <a href="users.jsp" class="pure-menu-link">所有用户</a>
                 </li>
                 <li class="pure-menu-item menu-item-divided pure-menu-selected">
-                    <a href="stickers.jsp" class="pure-menu-link">所有帖子</a>
+                    <a href="${pageContext.request.contextPath}/admin/allSticker?p=all" class="pure-menu-link">所有帖子</a>
                 </li>
                 <li class="pure-menu-item">
                     <a href="${pageContext.request.contextPath}/exit" class="pure-menu-link">退出</a>
@@ -81,26 +86,27 @@
         </div>
 
         <div class="content">
-            <h2 class="content-subhead">添加帖子</h2>
+            <h2 class="content-subhead">查看帖子</h2>
 
-            <form class="pure-form pure-form-stacked">
+            <form class="pure-form pure-form-stacked" action="${pageContext.request.contextPath}/admin/deleteSticker" method="post">
                 <fieldset>
 
                     <div class="pure-g">
+                        <input type="hidden" name="id" value="<%=sticker.getId()%>">
                         <div class="pure-u-1 pure-u-md-1-3">
                             <label for="title">标题</label>
-                            <input id="title" class="pure-u-23-24" type="text">
+                            <input id="title" class="pure-u-23-24" type="text" name="title" readonly="readonly" value="<%=sticker.getTitle()%>">
                         </div>
 
                         <div class="pure-u-1 pure-u-md-1-3">
                             <label for="content">内容</label>
-                            <textarea id="content" class="pure-u-23-24" rows="15"></textarea>
+                            <textarea id="content" class="pure-u-23-24" rows="15" name="content" readonly="readonly"><%=sticker.getContent()%></textarea>
                         </div>
                     </div>
                     <br>
 
                     <div align="center">
-                        <button type="submit" class="pure-button pure-button-primary">确定</button>
+                        <button type="submit" class="pure-button pure-button-primary" onclick="return confirm('确认删除？')">删除</button>
                     </div>
                 </fieldset>
             </form>

@@ -1,5 +1,3 @@
-<%@ page import="com.bbs.bean.Sticker" %>
-<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -24,8 +22,8 @@
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            };
+                    (i[r].q = i[r].q || []).push(arguments)
+                };
             i[r].l = 1 * new Date();
             a = s.createElement(o);
             m = s.getElementsByTagName(o)[0];
@@ -40,9 +38,7 @@
 
 </head>
 <body>
-<%
-    List stickers = (List) session.getAttribute("stickers");
-%>
+
 <div id="layout">
     <!-- Menu toggle -->
     <a href="#menu" id="menuLink" class="menu-link">
@@ -55,13 +51,13 @@
             <a class="pure-menu-heading" href="#">论坛管理系统</a>
 
             <ul class="pure-menu-list">
-                <li class="pure-menu-item menu-item-divided pure-menu-selected">
+                <li class="pure-menu-item">
                     <a href="index.jsp" class="pure-menu-link">主页</a>
                 </li>
                 <li class="pure-menu-item">
                     <a href="users.jsp" class="pure-menu-link">所有用户</a>
                 </li>
-                <li class="pure-menu-item">
+                <li class="pure-menu-item menu-item-divided pure-menu-selected">
                     <a href="stickers.jsp" class="pure-menu-link">所有帖子</a>
                 </li>
                 <li class="pure-menu-item">
@@ -77,40 +73,29 @@
         </div>
 
         <div class="content">
-            <h2 class="content-subhead">近期帖子</h2>
-            <div><a href="stickers.jsp">查看全部>></a></div>
+            <h2 class="content-subhead">添加帖子</h2>
 
-            <table class="pure-table pure-table-horizontal">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>标题</th>
-                    <th>内容</th>
-                    <th>日期</th>
-                </tr>
-                </thead>
+            <form class="pure-form pure-form-stacked" action="${pageContext.request.contextPath}/admin/addSticker" method="post">
+                <fieldset>
 
-                <tbody>
-            <%
-                int row = stickers.size() < 8 ? stickers.size() : 8;
-                for (int i = 0; i < row; i++) {
-                    Sticker sticker = (Sticker) stickers.get(i);
-                    if (i % 2 != 0) {
-                        out.print("<tr class=\"pure-table-odd\">");
-                    } else {
-                        out.print("<tr>");
-                    }
-            %>
-                    <td><%=sticker.getId()%></td>
-                    <td><a href="sticker.jsp?id=<%=sticker.getId()%>"><%=sticker.getTitle()%></a></td>
-                    <td><%=sticker.getContent()%></td>
-                    <td><%=sticker.getCreate()%></td>
-                </tr>
-            <%
-                }
-            %>
-                </tbody>
-            </table>
+                    <div class="pure-g">
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <label for="title">标题</label>
+                            <input id="title" class="pure-u-23-24" type="text" name="title">
+                        </div>
+
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <label for="content">内容</label>
+                            <textarea id="content" class="pure-u-23-24" rows="15" name="content"></textarea>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div align="center">
+                        <button type="submit" class="pure-button pure-button-primary">确定</button>
+                    </div>
+                </fieldset>
+            </form>
 
         </div>
     </div>

@@ -1,6 +1,7 @@
 package com.bbs.bean;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 public class Sticker {
     //id
@@ -10,7 +11,7 @@ public class Sticker {
     //内容
     private String content;
     //创建时间
-    private Timestamp create;
+    private Timestamp create = new Timestamp(new Date().getTime());
     //作者
     private int userid;
 

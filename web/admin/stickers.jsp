@@ -1,5 +1,6 @@
 <%@ page import="com.bbs.bean.Sticker" %>
-<%@ page import="java.util.List" %><%--suppress ThisExpressionReferencesGlobalObjectJS --%>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Date" %><%--suppress ThisExpressionReferencesGlobalObjectJS --%>
 <%--
   Created by IntelliJ IDEA.
   User: LiWenfeng
@@ -74,13 +75,13 @@
 
             <ul class="pure-menu-list">
                 <li class="pure-menu-item">
-                    <a href="index.jsp" class="pure-menu-link">主页</a>
+                    <a href="${pageContext.request.contextPath}/admin/allSticker" class="pure-menu-link">主页</a>
                 </li>
                 <li class="pure-menu-item">
                     <a href="users.jsp" class="pure-menu-link">所有用户</a>
                 </li>
                 <li class="pure-menu-item menu-item-divided pure-menu-selected">
-                    <a href="stickers.jsp" class="pure-menu-link">所有帖子</a>
+                    <a href="${pageContext.request.contextPath}/admin/allSticker?p=all" class="pure-menu-link">所有帖子</a>
                 </li>
                 <li class="pure-menu-item">
                     <a href="${pageContext.request.contextPath}/exit" class="pure-menu-link">退出</a>
@@ -97,10 +98,10 @@
         <div class="content">
             <h2 class="content-subhead">所有帖子</h2>
 
-            <form class="pure-form" style="text-align: right">
-                <input type="text" class="pure-input" title="" placeholder="请输入帖子标题">
+            <form class="pure-form" style="text-align: right" method="post" action="/admin/search">
+                <input type="text" class="pure-input" title="" placeholder="请输入帖子标题" name="message">
                 <button type="submit" class="pure-button">搜索</button>
-                <button type="button" class="pure-button" onclick='window.location.href="sticker.jsp"'>添加帖子</button>
+                <button type="button" class="pure-button" onclick='window.location.href="add-sticker.jsp"'>添加帖子</button>
             </form>
 
             <table class="pure-table pure-table-horizontal">
@@ -124,7 +125,7 @@
                         }
                 %>
                 <td><%=sticker.getId()%></td>
-                <td><a href="#"><%=sticker.getTitle()%></a></td>
+                <td><a href="sticker.jsp?id=<%=sticker.getId()%>"><%=sticker.getTitle()%></a></td>
                 <td><%=sticker.getContent()%></td>
                 <td><%=sticker.getCreate()%></td>
                 </tr>
